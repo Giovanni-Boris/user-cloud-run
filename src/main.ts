@@ -8,6 +8,7 @@ import compression from "compression";
 import { Logger } from "nestjs-pino";
 import { ValidationPipe } from "@nestjs/common";
 import { config, validateConfig } from "./commons/configs/config";
+import fastifyCors, { FastifyCorsOptions } from "@fastify/cors";
 
 interface IExtendedInfoObject extends InfoObject {
   "x-business-unit-acronym"?: string;
@@ -39,8 +40,14 @@ function createDocumentSwagger(app: NestFastifyApplication): void {
 }
 
 export async function bootstrap(): Promise<void> {
-  validateConfig(config);
-  const app = await NestFactory.create<NestFastifyApplication>(AppModule, new FastifyAdapter(), {
+ validateConfig(config);
+  const fastifyAdapter = new FastifyAdapter();
+  fastifyAdapter.register(fastifyCors, {
+    origin: true,
+    methods: ["GET", "PUT", "PATCH", "POST", "DELETE"],
+  } as FastifyCorsOptions);
+
+  const app = await NestFactory.create<NestFastifyApplication>(AppModule, fastifyAdapter, {
     bufferLogs: true,
   });
   app.use(compression({ threshold: 0 }));
@@ -48,10 +55,10 @@ export async function bootstrap(): Promise<void> {
   app.useGlobalPipes(
     new ValidationPipe({
       whitelist: true,
-      forbidNonWhitelisted: true,
       transform: true,
     })
   );
+
 
   createDocumentSwagger(app);
   await app.listen(config.PORT, "0.0.0.0");

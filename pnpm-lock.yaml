@@ -8,9 +8,9 @@ importers:
 
   .:
     dependencies:
-      '@fastify/static':
-        specifier: 7.0.4
-        version: 7.0.4
+      '@fastify/cors':
+        specifier: 9.0.1
+        version: 9.0.1
       '@nestjs/axios':
         specifier: 3.0.3
         version: 3.0.3(@nestjs/common@10.4.1(class-transformer@0.5.1)(class-validator@0.14.1)(reflect-metadata@0.2.2)(rxjs@7.8.1))(axios@1.7.7)(rxjs@7.8.1)
@@ -3260,7 +3260,8 @@ snapshots:
 
   '@eslint/js@8.57.0': {}
 
-  '@fastify/accept-negotiator@1.1.0': {}
+  '@fastify/accept-negotiator@1.1.0':
+    optional: true
 
   '@fastify/ajv-compiler@3.6.0':
     dependencies:
@@ -3302,6 +3303,7 @@ snapshots:
       fast-decode-uri-component: 1.0.1
       http-errors: 2.0.0
       mime: 3.0.0
+    optional: true
 
   '@fastify/static@7.0.4':
     dependencies:
@@ -3311,6 +3313,7 @@ snapshots:
       fastify-plugin: 4.5.1
       fastq: 1.17.1
       glob: 10.4.5
+    optional: true
 
   '@humanwhocodes/config-array@0.11.14':
     dependencies:
@@ -3363,7 +3366,8 @@ snapshots:
 
   '@lukeed/csprng@1.1.0': {}
 
-  '@lukeed/ms@2.0.2': {}
+  '@lukeed/ms@2.0.2':
+    optional: true
 
   '@microsoft/tsdoc@0.15.0': {}
 
@@ -4417,7 +4421,8 @@ snapshots:
 
   delayed-stream@1.0.0: {}
 
-  depd@2.0.0: {}
+  depd@2.0.0:
+    optional: true
 
   dir-glob@3.0.1:
     dependencies:
@@ -4487,7 +4492,8 @@ snapshots:
 
   escalade@3.2.0: {}
 
-  escape-html@1.0.3: {}
+  escape-html@1.0.3:
+    optional: true
 
   escape-string-regexp@1.0.5: {}
 
@@ -4946,6 +4952,7 @@ snapshots:
       setprototypeof: 1.2.0
       statuses: 2.0.1
       toidentifier: 1.0.1
+    optional: true
 
   http2-wrapper@1.0.3:
     dependencies:
@@ -5210,7 +5217,8 @@ snapshots:
     dependencies:
       mime-db: 1.52.0
 
-  mime@3.0.0: {}
+  mime@3.0.0:
+    optional: true
 
   mimic-fn@2.1.0: {}
 
@@ -5629,7 +5637,8 @@ snapshots:
       gopd: 1.0.1
       has-property-descriptors: 1.0.2
 
-  setprototypeof@1.2.0: {}
+  setprototypeof@1.2.0:
+    optional: true
 
   shebang-command@1.2.0:
     dependencies:
@@ -5678,7 +5687,8 @@ snapshots:
 
   stackback@0.0.2: {}
 
-  statuses@2.0.1: {}
+  statuses@2.0.1:
+    optional: true
 
   std-env@3.7.0: {}
 
@@ -5798,7 +5808,8 @@ snapshots:
 
   toad-cache@3.7.0: {}
 
-  toidentifier@1.0.1: {}
+  toidentifier@1.0.1:
+    optional: true
 
   token-types@5.0.1:
     dependencies:
