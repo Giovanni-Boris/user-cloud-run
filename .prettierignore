@@ -1,0 +1,17 @@
+# Ignore pnpm-lock.yaml
+pnpm-lock.yaml
+
+# Ignore node_modules directory
+node_modules/
+
+# Ignore build output
+dist/
+build/
+
+# Ignore all markdown files
+*.md
+
+vitest.config.e2e.ts
+vitest.config.ts
+tsconfig.json
+tsconfig.build.json
